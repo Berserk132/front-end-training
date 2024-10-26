@@ -1,0 +1,30 @@
+@media screen and (min-width: 0) and (max-width: 768px) {
+  .container {
+      max-width: 650px;
+      padding: 0px 15px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .container {
+      max-width: 720px;
+  }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+  .container {
+      max-width: 960px;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .container {
+    max-width: 1300px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1500px;
+  }
+}

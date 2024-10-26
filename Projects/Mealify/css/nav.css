@@ -1,0 +1,167 @@
+.nav {
+  background-color: var(--color-light);
+  box-shadow: 0px 0px 14px 0px #0000001b;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
+.navbar-right-section  label{
+  margin-right: 1rem;
+}
+
+.navbar-header {
+  font-size: 2rem;
+  margin: 1.9rem 0;
+}
+
+.navbar-header a {
+  text-decoration: none;
+}
+
+.navbar-header a::after {
+  content: ".";
+  position: absolute;
+  color: var(--color-primary);
+}
+
+
+.navbar-right-section  i{
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.nav-links{
+  list-style: none;
+  display: flex;
+  column-gap: 1.6rem;
+}
+
+nav:has(.nav-links:target) {
+  height: 100%;
+  background-color: hsl( 0, 0%, 100%, 0.7 );
+}
+
+.nav-links .close-icon {
+  padding: 10px 15px 5px;
+  align-self: flex-end;
+  font-size: 1.7rem;
+  display: none;
+}
+
+.nav-links li a{
+  color: var(--color-secondary);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  padding: var(--block-gap) 10px;
+}
+
+.nav-links li a{
+  text-decoration: none;
+  position: relative;
+}
+
+nav .nav-links li a::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  bottom: -3px;
+  left: 0.7rem;
+  width: 0;
+  background-color: var(--color-primary);
+  transition: width 400ms;
+}
+
+body:has(#home:target) li a[href="#home"]::before,
+body:has(#contact:target) li a[href="#contact"]::before,
+body:has(#gallery:target) li a[href="#gallery"]::before,
+body:has(#chefs:target) li a[href="#chefs"]::before {
+  width: calc(100% - (var(--inline-gap)* 2));
+}
+
+
+body:has(#home:target) li a[href="#home"],
+body:has(#contact:target) li a[href="#contact"],
+body:has(#gallery:target) li a[href="#gallery"],
+body:has(#chefs:target) li a[href="#chefs"] {
+  color: #000;
+}
+
+/*^========> Navbar <========*/
+@media screen and (max-width: 1023px) {
+  nav .nav-links {
+    position: absolute;
+    z-index: 999;
+    height: 100%;
+    background-color: #fff;
+    border-left: 2px solid #f1f1f1;
+    right: 0;
+    top: 0;
+    transition: all .5s ease-in-out;
+    width: 0%;
+    overflow: hidden;
+  }
+
+  body:has(#home:target) li a[href="#home"]::before,
+  body:has(#contact:target) li a[href="#contact"]::before,
+  body:has(#gallery:target) li a[href="#gallery"]::before,
+  body:has(#chefs:target) li a[href="#chefs"]::before {
+    width: 100%;
+  }
+
+  .nav-links:target {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+  }
+
+  .nav-links .close-icon {
+    padding: 10px 15px 5px;
+    align-self: flex-end;
+    font-size: 1.7rem;
+    display: block;
+  }
+
+  .nav-links li a{
+    color: #a9a4a4;
+    font-weight: 600;
+    font-size: 1.0625rem;
+    padding: var(--block-gap) 10px;
+  }
+
+  nav .nav-links a:not(.active):hover::before {
+    width: 0px;
+  }
+
+  /* nav .nav-links li:nth-child(2) a::after {
+    content: '';
+    width: 100%;
+    display: block;
+    border-bottom: 2px solid red;
+    animation: 0.5s in-out forwards;
+  } */
+
+  nav .nav-links li a {
+    padding: 0px 10px;
+    width: 100%;
+    display: inline-block;
+  }
+
+  .menu-icon {
+    display: inline;
+  }
+
+  @keyframes in-out {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 0%;
+    }
+  }
+}

@@ -1,0 +1,128 @@
+.gallery {
+  background-color: var(--color-light-grey);
+  display: flex;
+}
+
+.gallery h2 {
+  color: var(--color-tertiary);
+  font-weight: 400;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.main-title {
+  font-size: 3.125rem;
+  font-family: var(--font-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gallery .container {
+  display: block;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.gallery-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 0 20px;
+  height: 1300px;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
+}
+
+.gallery-photos picture {
+  width: calc(calc(100% - 1.2rem * 2) / 3);
+  border: 4px solid #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-photos picture .layer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000096;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  gap: 0.5rem;
+  padding: 0.9rem;
+  transition: top 400ms;
+  
+}
+
+.gallery-photos picture img {
+  transition: all .2s ease-in-out;
+}
+
+.gallery-photos picture:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-photos picture:hover .layer {
+  top: 0;
+}
+
+.gallery-photos picture .layer h2 {
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #fff;
+}
+
+.gallery-photos picture .layer p {
+  color: #ddd;
+  text-align: center;
+}
+
+
+.gallery-photos picture img {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (min-width: 0) and (max-width: 768px) {
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 0;
+    height: auto;
+    margin-top: 1.4rem;
+  }
+
+  .gallery-photos picture {
+    width: 100%;
+    border: 4px solid #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+  .gallery-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 0;
+    height: 850px;
+    margin-top: 1.4rem;
+  }
+}

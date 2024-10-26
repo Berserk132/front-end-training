@@ -1,0 +1,159 @@
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact h2 {
+  color: var(--color-tertiary);
+  font-weight: 400;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.contact iframe {
+  width: 100%;
+  height: 24rem;
+}
+
+
+.contact p span {
+  display: block;
+}
+
+.main-title {
+  font-size: 3.125rem;
+  font-family: var(--font-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.contact .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.details a {
+  text-decoration: none;
+}
+
+.address, 
+.email, 
+.phone, 
+.opening-hours {
+  display: flex;
+  width: 100%;
+  background-color: hsl( 0, 0%, calc(100% - 4%) );
+  gap: 15px;
+  margin-top: 1.5rem;
+  padding: 20px 10px;
+}
+
+.opening-hours {
+  margin-bottom: 1.5rem;
+}
+
+.details .icon {
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  min-width: 3.1rem;
+  min-height: 3.1rem;
+  margin: 10px;
+}
+
+.details .icon i {
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 1.875rem #00000014;
+  padding: 10px;
+  gap: 1rem;
+  width: 100%;
+}
+
+.contact form input {
+  width: 100%;
+  padding: 10px;
+  transition: border-color 0.5s;
+  outline: none;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact form textarea {
+  padding: 10px;
+  height: 9rem;
+  transition: border-color 0.5s;
+  outline: none;
+}
+
+.contact input:focus, textarea:focus {
+  border: 2px solid red;
+}
+
+.contact form button {
+  background-color: var(--color-primary);
+  border-radius: 2rem;
+  align-self: center;
+  padding: 0.8rem 2rem;
+  color: #fff;
+  border: none;
+}
+
+@media screen and (min-width: 769px){
+  .details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .address, 
+  .email, 
+  .phone, 
+  .opening-hours {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: hsl( 0, 0%, calc(100% - 4%) );
+    width: calc(calc(100% - (1rem)) / 2);
+    padding: 20px 10px;
+  }
+
+  .opening-hours {
+    margin-bottom: 0;
+  }
+
+  .contact p span {
+    display: inline;
+  }
+
+  .input-group input {
+    width: calc(calc(100% - (1rem)) / 2) !important;
+  }
+}
